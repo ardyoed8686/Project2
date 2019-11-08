@@ -17,7 +17,7 @@ module.exports = function(app) {
   });
 
   // Update
-app.update()
+// app.update()
 
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
