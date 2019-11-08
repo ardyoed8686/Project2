@@ -1,14 +1,14 @@
 
 
-{
-  "development": {
+
+  "development"= {
     "username": "root",
-    "password": "010010110Up",
+    "password": process.env.KEY,
     "database": "todo_db",
     "host": "localhost",
     "dialect": "mysql"
   },
-  "test": {
+  "test"= {
     "username": "root",
     "password": null,
     "database": "testdb",
@@ -16,8 +16,8 @@
     "dialect": "mysql",
     "logging": false
   },
-  "production": {
+  "production"= {
     "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
-}
+
