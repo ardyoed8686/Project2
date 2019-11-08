@@ -4,9 +4,8 @@
 module.exports = function(sequelize, DataTypes) {
     var Category = sequelize.define("category", {
       
-      custom: DataTypes.STRING,
-      level: DataTypes.INTEGER,
-      color: DataTypes.STRING
+      type: DataTypes.STRING,
+    
 
       
     });

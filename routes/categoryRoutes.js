@@ -6,6 +6,7 @@ module.exports = function(app) {
     db.Category.findAll({}).then(function(dbCategory) {
       res.json(dbCategory);
     });
+
   });
 
   // Create a new category
@@ -14,6 +15,9 @@ module.exports = function(app) {
       res.json(dbCategory);
     });
   });
+
+  // Update
+app.update()
 
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
