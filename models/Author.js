@@ -4,5 +4,6 @@ module.exports = function(sequelize, DataTypes) {
     name: DataTypes.STRING,
     // photo: DataTypes.TEXT
   });
+
   return Author;
 };

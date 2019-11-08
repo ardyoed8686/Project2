@@ -24,16 +24,18 @@ app.set("view engine", "handlebars");
 
 
 // Routes
+require("./routes/categoryRoutes")(app);
 require("./routes/authorApiRoutes")(app);
 // require("./routes/htmlRoutes")(app);
-
-
-// GITANA ADDED A ROUTE //////////////////////
 require("./routes/taskApiRoutes.js")(app);
 
 // test
 app.get('/', function(req,res){
     res.send("ha ha ha ha ");
+});
+
+app.get('/api', function(req,res){
+  res.send("ha ha ha ha ");
 });
 
 var syncOptions = { force: false };

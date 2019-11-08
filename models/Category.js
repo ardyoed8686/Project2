@@ -2,17 +2,12 @@
 
 
 module.exports = function(sequelize, DataTypes) {
-    var Category = sequelize.define("category", {
+
+    var Category = sequelize.define("Category", {
       
       type: DataTypes.STRING,
-    
-
-      
     });
-
-
-
-    Category.associate = function(models){
+    // Category.associate = function(models){
 
         // This will continue to throw an error as long as post does not exist in the models directory.
 
@@ -22,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
         //       allowNull: false
         //     }
         //   });
-    };
+    // };
     
     return Category;
    
