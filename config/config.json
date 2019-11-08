@@ -3,7 +3,9 @@
 {
   "development": {
     "username": "root",
+
     "password": "macHim!8686",
+
     "database": "todo_db",
     "host": "localhost",
     "dialect": "mysql"
