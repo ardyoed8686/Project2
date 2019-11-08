@@ -1,6 +1,6 @@
 
 module.exports = function(sequelize, DataTypes) {
-  var Task = sequelize.define("Tasks", {
+  var Task = sequelize.define("Task", {
     task: DataTypes.STRING,
     complete: DataTypes.BOOLEAN
   });
