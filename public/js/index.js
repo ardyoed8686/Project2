@@ -6,11 +6,10 @@ var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  getCategories: function(example) {
+  getCategory: function() {
     return $.ajax({
       type: "GET",
-      url: "api/categories",
-      data: JSON.stringify(example)
+      url: "api/category",
     });
   },
   getExamples: function() {

@@ -26,10 +26,15 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+require("./routes/categoryRoutes")(app);
 
 // test
 app.get('/', function(req,res){
     res.send("ha ha ha ha ");
+});
+
+app.get('/api', function(req,res){
+  res.send("ha ha ha ha ");
 });
 
 var syncOptions = { force: false };
