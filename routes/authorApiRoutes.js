@@ -15,7 +15,11 @@ module.exports = function(app) {
 //     db.Author.findOne({}).then(function(dbAuthor){
 // // if author name not found do db.Author.create
 //     })
-    db.Author.create(req.body).then(function(dbAuthor) {
+console.log(req.body.name);
+
+    db.Author.create({
+        name: req.body.name
+    }).then(function(dbAuthor) {
       res.json(dbAuthor);
     });
   });
@@ -28,14 +32,16 @@ module.exports = function(app) {
         where: {id: req.params.id}
         }
     ).then(function(dbAuthor) {
-      res.json(dbAuthor);
+      res.send("We updated " + dbAuthor);
     });
   });
 
   // Delete an author by id
   app.delete("/api/authors/:id", function(req, res) {
-    db.Author.destroy({ where: { id: req.params.id } }).then(function(dbAuthor) {
+    db.Author.destroy({
+         where: { id: req.params.id } }).then(function(dbAuthor) {
       res.json(dbAuthor);
+      
     });
   });
 };
