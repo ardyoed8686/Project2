@@ -25,7 +25,7 @@ app.set("view engine", "handlebars");
 
 // Routes
 require("./routes/authorApiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+// require("./routes/htmlRoutes")(app);
 
 
 // GITANA ADDED A ROUTE //////////////////////

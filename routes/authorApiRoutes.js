@@ -41,6 +41,7 @@ console.log(req.body.name);
     db.Author.destroy({
          where: { id: req.params.id } }).then(function(dbAuthor) {
       res.json(dbAuthor);
+      
     });
   });
 };
