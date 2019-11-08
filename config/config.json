@@ -3,8 +3,8 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "exampledb",
+    "password": "rootgitana2!",
+    "database": "tododb",
     "host": "localhost",
     "dialect": "mysql"
   },
