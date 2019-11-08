@@ -1,8 +1,8 @@
 
 module.exports = function(sequelize, DataTypes) {
-  var Author = sequelize.define("Authors", {
+  var Author = sequelize.define("Author", {
     name: DataTypes.STRING,
-    // description: DataTypes.TEXT
+    // photo: DataTypes.TEXT
   });
   return Author;
 };
