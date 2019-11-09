@@ -15,6 +15,11 @@ module.exports = function(sequelize, DataTypes) {
             }
           });
 
+          Author.hasMany(models.Category, {
+            foreignKey: {
+              allowNull: false
+            }
+          });
     };
   return Author;
 };
