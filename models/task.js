@@ -5,20 +5,28 @@ module.exports = function(sequelize, DataTypes) {
     complete: DataTypes.BOOLEAN
   });
 
-  // Category.associate = function(models){
 
-        // BelongsTo//
-        
-        
-        This will continue to throw an error as long as post does not exist in the models directory.
+  Task.associate = function(models) {
+    // A Task should belong to an Author
+    // A Task can't be created without an Author due to the foreign key constraint
+    Task.belongsTo(models.Author, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
 
-        // This is associating the Category to the post that is done.
-        // Category.belongsTo(models.Post, {
-        //     foreignKey: {
-        //       allowNull: false
-        //     }
-        //   });
-    // };
 
+    // A Task should belong to an Category
+    // A Task can't be created without an Category due to the foreign key constraint
+    Task.belongsTo(models.Category, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  }
+  
   return Task;
+
+ 
 };
+

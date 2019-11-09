@@ -7,22 +7,15 @@ module.exports = function(sequelize, DataTypes) {
       
       type: DataTypes.STRING,
     });
-    
-    // ============================================/
-    Task.associate = function(models){
+    Category.associate = function(models){
+        // This will connect Category to the task id. If it gets deleted the category wont be deleted,but if it gets updated then the category will be updated as well.
 
-        // This will continue to throw an error as long as post does not exist in the models directory.
-
-        // This is associating the Category to the post that is done.
-        Task.belongsTo(models.Post, {
-            foreignKey: {
-              allowNull: false
-            }
-          });
-    };
-    
- // ============================================/
-
+        Category.hasMany(models.Task,{
+          onDelete:'SET NULL',
+          onUpdate:'CASCADE'
+        });
+      }
+        
     return Category;
    
   };
