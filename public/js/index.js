@@ -15,7 +15,7 @@ var API = {
   getExamples: function() {
     return $.ajax({
       url: "api/examples",
-      type: "GET"
+      type: "POST"
     });
   },
   deleteExample: function(id) {
