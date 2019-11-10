@@ -26,17 +26,11 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/categoryRoutes")(app);
 require("./routes/authorApiRoutes")(app);
-// require("./routes/htmlRoutes")(app);
+require("./routes/htmlRoutes")(app);
 require("./routes/taskApiRoutes.js")(app);
+require("./routes/userRoutes.js")(app);
 
-// test
-app.get('/', function(req,res){
-    res.send("ha ha ha ha ");
-});
 
-app.get('/api', function(req,res){
-  res.send("ha ha ha ha ");
-});
 
 var syncOptions = { force: false };
 

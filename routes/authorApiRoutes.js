@@ -15,7 +15,7 @@ module.exports = function(app) {
 //     db.Author.findOne({}).then(function(dbAuthor){
 // // if author name not found do db.Author.create
 //     })
-console.log(req.body.name);
+// console.log(req.body.name);
 
     db.Author.create({
         name: req.body.name
