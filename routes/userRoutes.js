@@ -10,6 +10,11 @@ var tsk = req.body.task;
 
 console.log(author," \n",category, " \n",tsk);
 
+var todoObj = {
+    todo:[author, category, tsk]
+    
+};
+
 db.Author.create({
     name: author
 }).then(function(dbAuthor) {
@@ -31,7 +36,14 @@ db.Task.create({
     console.log(dbTask);
   });
 
-  res.send("success")
+
+ 
+    
+  
+
+// Need to hit the database endpoint so that the rendering occurs in reference to database memory as apposed to the object that I created in this file.
+
+res.render("index", todoObj)
 
 
 
