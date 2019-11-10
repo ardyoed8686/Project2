@@ -10,15 +10,15 @@ module.exports = function(sequelize, DataTypes) {
 
         // This is associating Author to the Task that is done.
         Author.hasMany(models.Task, {
-            foreignKey: {
-              allowNull: false
-            }
+            // foreignKey: {
+            //   allowNull: false
+            // }
           });
 
         Author.hasMany(models.Category, {
-            foreignKey: {
-              allowNull: false
-            }
+            // foreignKey: {
+            //   allowNull: false
+            // }
           });
     };
   return Author;

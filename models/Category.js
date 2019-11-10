@@ -8,8 +8,8 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
     });
     Category.associate = function(models){
-        // This will connect Category to the task id. If it gets deleted the category wont be deleted,but if it gets updated then the category will be updated as well.
-
+        
+      // This will connect Category to the task id. 
         Category.hasMany(models.Task,{
           onDelete:'SET NULL',
           onUpdate:'CASCADE'
