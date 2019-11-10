@@ -82,30 +82,30 @@ $(document).ready(function() {
     function updatedTasks(tasks) {
       $.ajax({
         method: "PUT",
-        url: "/api/todos",
-        data: todo
-      }).then(getTodos);
+        url: "/api/tasks",
+        data: tasks
+      }).then(getTasks);
     }
   
-    // This function is called whenever a todo item is in edit mode and loses focus
+    // This function is called whenever a tasks item is in edit mode and loses focus
     // This cancels any edits being made
     function cancelEdit() {
-      var currentTodo = $(this).data("todo");
-      if (currentTodo) {
+      var currentTasks = $(this).data("task");
+      if (currentTask) {
         $(this).children().hide();
-        $(this).children("input.edit").val(currentTodo.text);
+        $(this).children("input.edit").val(currentTask.text);
         $(this).children("span").show();
         $(this).children("button").show();
       }
     }
   
     // This function constructs a todo-item row
-    function createNewRow(todo) {
+    function createNewRow(task) {
       var $newInputRow = $(
         [
-          "<li class='list-group-item todo-item'>",
+          "<li class='list-group-item task-item'>",
           "<span>",
-          todo.text,
+          task.text,
           "</span>",
           "<input type='text' class='edit' style='display: none;'>",
           "<button class='delete btn btn-danger'>x</button>",
@@ -114,24 +114,24 @@ $(document).ready(function() {
         ].join("")
       );
   
-      $newInputRow.find("button.delete").data("id", todo.id);
+      $newInputRow.find("button.delete").data("id", tasks.id);
       $newInputRow.find("input.edit").css("display", "none");
-      $newInputRow.data("todo", todo);
-      if (todo.complete) {
+      $newInputRow.data("tasks", tasks);
+      if (tasks.complete) {
         $newInputRow.find("span").css("text-decoration", "line-through");
       }
       return $newInputRow;
     }
   
     // This function inserts a new todo into our database and then updates the view
-    function insertTodo(event) {
+    function insertTasks(event) {
       event.preventDefault();
-      var todo = {
+      var task = {
         text: $newItemInput.val().trim(),
         complete: false
       };
   
-      $.post("/api/todos", todo, getTodos);
+      $.post("/api/tasks", todo, getTasks);
       $newItemInput.val("");
     }
   });
