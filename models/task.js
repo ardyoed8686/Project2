@@ -10,11 +10,11 @@ module.exports = function(sequelize, DataTypes) {
 
   Task.associate = function(models) {
 
-    Task.belongsTo(models.Category, {
-      as: "Category", 
-      onDelete: 'CASCADE', 
-      foreignKey: { name:'CategoryId', allowNull: false }
-  });
+  //   Task.belongsTo(models.Category, {
+  //     as: "Category", 
+  //     onDelete: 'CASCADE', 
+  //     foreignKey: { name:'CategoryId', allowNull: false }
+  // });
     // A Task should belong to an Author
     // A Task can't be created without an Author due to the foreign key constraint
     // models.Task.belongsTo(models.Author, {
@@ -29,7 +29,8 @@ module.exports = function(sequelize, DataTypes) {
     // A Task can't be created without a Category due to the foreign key constraint
     models.Task.belongsTo(models.Category, {
       foreignKey: {
-        allowNull: true
+        allowNull: false,
+        defaultValue: 1
       }
     });
   }
