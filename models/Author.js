@@ -14,10 +14,6 @@ module.exports = function(sequelize, DataTypes) {
         Author.hasMany(models.Task, {
             foreignKey: "taskId"
           });
-
-        Author.hasMany(models.Category, {
-            foreignKey:'categoryId'
-          });
     };
   return Author;
 };
