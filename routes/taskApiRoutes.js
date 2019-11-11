@@ -14,6 +14,7 @@ module.exports = function(app) {
 
   // Create a new TASKs
   app.post("/api/tasks", function(req, res) {
+<<<<<<< HEAD
     db.Task.create({
       name: req.body.name,
       description: req.body.description,
@@ -62,6 +63,27 @@ module.exports = function(app) {
     //   }
     // })
   });
+=======
+    console.log(req. body);
+    console.log("This is a new task" + req.body.name);
+  
+    db.Category.findOne({
+      where: {type: req.body.type}
+    }).then (function(results){
+      console.log(results)
+    }
+    )
+  }
+    // db.Task.create({
+    //   name: req.body.name,
+    //   description: req.body.description,
+    //   due: req.body.due,
+    //   complete: req.body.complete
+    //  }).then(function(dbTask) {
+    //   res.redirect('/task')
+    // });
+  // });
+>>>>>>> GitanaBranch
 
 
   // Delete an TASKs by id

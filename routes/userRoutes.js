@@ -1,51 +1,51 @@
-// var db = require("../models");
+var db = require("../models");
 
-// module.exports = function(app) {
+module.exports = function(app) {
 
-// app.post("/api/process-form", function(req, res){
+app.post("/api/process-form", function(req, res){
 
-// var author = req.body.author;
-// var category = req.body.category;
-// var tsk = req.body.task;
+var author = req.body.author;
+var category = req.body.category;
+var tsk = req.body.task;
 
-// console.log(author," \n",category, " \n",tsk);
+console.log(author," \n",category, " \n",tsk);
 
-// var todoObj = {
-//     todo:[author, category, tsk]
+var todoObj = {
+    todo:[author, category, tsk]
     
-// };
+};
 
-// db.Author.create({
-//     name: author
-// }).then(function(dbAuthor) {
-//   console.log(dbAuthor);
-// });
-
-
-// db.Category.create({
-//     type: category
-//   }).then(function(dbCategory){
-//     console.log(dbCategory);
-//   });
+db.Author.create({
+    name: author
+}).then(function(dbAuthor) {
+  console.log(dbAuthor);
+});
 
 
-// db.Task.create({
-//     task: tsk,
-//     complete: false
-//    }).then(function(dbTask) {
-//     console.log(dbTask);
-//   });
+db.Category.create({
+    type: category
+  }).then(function(dbCategory){
+    console.log(dbCategory);
+  });
+
+
+db.Task.create({
+    task: tsk,
+    complete: false
+   }).then(function(dbTask) {
+    console.log(dbTask);
+  });
 
 
  
     
   
 
-// // Need to hit the database endpoint so that the rendering occurs in reference to database memory as apposed to the object that I created in this file.
+// Need to hit the database endpoint so that the rendering occurs in reference to database memory as apposed to the object that I created in this file.
 
-// res.render("index", todoObj)
+res.render("index", todoObj)
 
 
 
-// });
-// }
+});
+}
