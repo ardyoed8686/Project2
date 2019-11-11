@@ -7,14 +7,12 @@ module.exports = function(sequelize, DataTypes) {
       
       type: DataTypes.STRING,
     });
-    Category.associate = function(models){
+    // Category.associate = function(models){
         
-      // This will connect Category to the task id. 
-        Category.hasMany(models.Task,{
-          onDelete:'SET NULL',
-          onUpdate:'CASCADE'
-        });
-      }
+    //   // This will connect Category to the task id. 
+    //     Category.hasMany(models.Task,{
+    //     });
+    //   }
         
     return Category;
    

@@ -1,7 +1,9 @@
 
 module.exports = function(sequelize, DataTypes) {
   var Task = sequelize.define("Task", {
-    task: DataTypes.STRING,
+    name: DataTypes.STRING,
+    description: DataTypes.STRING,
+    due: DataTypes.DATE,
     complete: DataTypes.BOOLEAN
   });
 
@@ -9,20 +11,20 @@ module.exports = function(sequelize, DataTypes) {
   Task.associate = function(models) {
     // A Task should belong to an Author
     // A Task can't be created without an Author due to the foreign key constraint
-    Task.belongsTo(models.Author, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
+    // Task.belongsTo(models.Author, {
+    //   foreignKey: {
+    //     allowNull: false
+    //   }
+    // });
 
 
     // A Task should belong to an Category
     // A Task can't be created without a Category due to the foreign key constraint
-    Task.belongsTo(models.Category, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
+    // Task.belongsTo(models.Category, {
+    //   foreignKey: {
+    //     allowNull: false
+    //   }
+    // });
   }
   
   return Task;

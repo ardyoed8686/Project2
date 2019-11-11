@@ -6,6 +6,13 @@ module.exports = function(app) {
     db.Author.findAll({}).then(function(dbAuthor) {
       res.json(dbAuthor);
     });
+
+    
+    // db.Author.findAll({}).then(dbAuthor => {
+    //   // projects will be an array of Project instances with the specified name
+    //   res.json(dbAuthor);
+    // })
+    
   });
 
 
@@ -25,7 +32,7 @@ module.exports = function(app) {
   });
 
   // Update an author name
-  app.put("/api/authors/update/:id", function(req, res) {
+  app.put("/api/authors/:id", function(req, res) {
     db.Author.update({
         name: req.body.name},
         {

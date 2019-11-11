@@ -6,6 +6,7 @@ module.exports = function(app) {
   app.get("/api/tasks", function(req, res) {
    
     db.Task.findAll({}).then(function(dbTask) {
+      // console.log("This is " + dbTask);
       res.json(dbTask);
     });
   });
@@ -14,13 +15,15 @@ module.exports = function(app) {
   // Create a new TASKs
   app.post("/api/tasks", function(req, res) {
     // console.log(req. body);
-    console.log(req.body.task);
+    console.log("This is a new task" + req.body.task);
   
     db.Task.create({
-      task: req.body.task,
+      name: req.body.name,
+      description: req.body.description,
+      due: req.body.due,
       complete: req.body.complete
      }).then(function(dbTask) {
-      res.json(dbTask);
+      res.redirect('/task')
     });
   });
 
@@ -36,8 +39,10 @@ module.exports = function(app) {
   // Update an TASKs by id
   app.put("/api/tasks/:id", function(req, res) {
     db.Task.update({
-    task: req.body.task,
-    complete: req.body.complete
+      name: req.body.name,
+      description: req.body.description,
+      due: req.body.due,
+      complete: req.body.complete
   },{
     where:{
       id: req.params.id

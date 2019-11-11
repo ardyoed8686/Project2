@@ -1,20 +1,21 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
+var $taskText = $("#example-text");
+var $taskDescription = $("#example-description");
 var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+var $taskList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
+// get tasks
 var API = {
-  getCategory: function() {
+  getTasks: function() {
     return $.ajax({
       type: "GET",
-      url: "api/category",
+      url: "api/task",
     });
   },
-  getExamples: function() {
+  getTasks: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/task",
       type: "POST"
     });
   },
@@ -28,16 +29,16 @@ var API = {
 
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
+  API.getTasks().then(function(data) {
+    var $tasks = data.map(function(example) {
       var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+        .text(task.text)
+        .attr("href", "/api/" + task.id);
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
-          "data-id": example.id
+          "data-id": task.id
         })
         .append($a);
 
@@ -50,8 +51,8 @@ var refreshExamples = function() {
       return $li;
     });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    $taskList.empty();
+    $taskList.append($tasks);
   });
 };
 
@@ -60,22 +61,22 @@ var refreshExamples = function() {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var task = {
+    text: $taskText.val().trim(),
+    description: $taskDescription.val().trim()
   };
 
-  if (!(example.text && example.description)) {
+  if (!(task.text && task.description)) {
     alert("You must enter an example text and description!");
     return;
   }
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
+  API.savetask(task).then(function() {
+    refreshTasks();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $taskText.val("");
+  $taskDescription.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -85,8 +86,8 @@ var handleDeleteBtnClick = function() {
     .parent()
     .attr("data-id");
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+  API.deleteTask(idToDelete).then(function() {
+    refreshTasks();
   });
 };
 
