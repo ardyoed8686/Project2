@@ -1,7 +1,9 @@
 
 module.exports = function(sequelize, DataTypes) {
   var Task = sequelize.define("Task", {
-    task: DataTypes.STRING,
+    name: DataTypes.STRING,
+    description: DataTypes.STRING,
+    due: DataTypes.DATE,
     complete: DataTypes.BOOLEAN
   });
 

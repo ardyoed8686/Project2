@@ -13,19 +13,28 @@
             <label for="example-description">Category</label>
             <textarea name='category'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Category..."></textarea>
           </div>
+            <div class="form-group">
+            <label for="example-description">Name</label>
+            <textarea name='category'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Category..."></textarea>
+          </div>
            <div class="form-group">
-            <label for="example-description">Task</label>
+            <label for="example-description">Task Description</label>
+            <textarea name='task'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Task..."></textarea>
+          </div>
+            <div class="form-group">
+            <label for="example-description">Due Date</label>
             <textarea name='task'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Task..."></textarea>
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
 
         <h3>My to-do list:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each todo}}
-          <li>{{this}}</li>
-          
-          
+        <ul id="task-list" class="list-group">
+          {{#each toDoList}}
+          <li>{{name}}</li>
+          <li>{{description}}</li>
+          <li>{{due}}</li>
+          <li>{{completed}}</li>
           {{/each}}
         </ul>
       </div>

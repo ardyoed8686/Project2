@@ -11,8 +11,6 @@ module.exports = function(sequelize, DataTypes) {
         
       // This will connect Category to the task id. 
         Category.hasMany(models.Task,{
-          onDelete:'SET NULL',
-          onUpdate:'CASCADE'
         });
       }
         
