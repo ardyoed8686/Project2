@@ -14,17 +14,53 @@ module.exports = function(app) {
 
   // Create a new TASKs
   app.post("/api/tasks", function(req, res) {
-    // console.log(req. body);
-    console.log("This is a new task" + req.body.task);
-  
     db.Task.create({
       name: req.body.name,
       description: req.body.description,
       due: req.body.due,
       complete: req.body.complete
-     }).then(function(dbTask) {
+    })
+    .then(function(dbTask) {
       res.redirect('/task')
     });
+
+
+
+    // console.log(req.body);
+    // console.log("This is a new task" + req.body.name);
+    // db.Category.findOne({
+    //   where: { type: req.body.type }
+    // })
+    // .then( function(results) {
+    //   console.log(results)
+      // if(results) {
+      //   db.Task.create({
+      //     name: req.body.name,
+      //     description: req.body.description,
+      //     due: req.body.due,
+      //     complete: req.body.complete,
+      //   })
+      //   .then(function(dbTask) {
+      //     res.redirect('/task')
+      //   });
+      // } else {
+
+      //   db.Category.create({
+      //     type: req.body.type
+      //   })
+    //     .then(function(results){
+    //       db.Task.create({
+    //         name: req.body.name,
+    //         description: req.body.description,
+    //         due: req.body.due,
+    //         complete: req.body.complete
+    //       })
+    //       .then(function(dbTask) {
+    //         res.redirect('/task')
+    //       });
+    //     })
+    //   }
+    // })
   });
 
 
@@ -43,14 +79,13 @@ module.exports = function(app) {
       description: req.body.description,
       due: req.body.due,
       complete: req.body.complete
-  },{
-    where:{
-      id: req.params.id
-    }
-  }).then(function(dbTask) {
-    res.json(dbTask);
+    },{
+      where:{
+        id: req.params.id
+      }
+    }).then(function(dbTask) {
+      res.json(dbTask);
+    });
   });
-
-});
 
 };
