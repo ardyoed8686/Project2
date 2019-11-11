@@ -30,6 +30,11 @@
     -webkit-filter: blur(1x); 
   } */
 
+  .container{
+      width: 80%;
+  }
+
+
 #boxes{
     width: 80%;
     margin: auto;
@@ -52,8 +57,8 @@
     box-shadow: 25px 25px 50px rgb(0,0,0,0.5);
     opacity: 0.8;
     filter: alpha(opacity=80);
-    border-radius: 2px;
-
+    border-radius: 3px;
+    margin-bottom: 10%;
 }
 
 .red{background-color:yellow;}
@@ -82,7 +87,7 @@ h2{
     text-align: center;
     line-height: 80px;
     font-family: 'Rock Salt', cursive;
-    margin-top: 110px;
+    margin-top: 70px;
   }
 
   .container1 :hover{
@@ -146,3 +151,32 @@ a{
     color: rgb(64, 9, 231),
 }
 
+/* ////////////////MODAL ABOVE////////////////////////// */
+
+/* ////////////////LIST PAGE BELOW////////////////////////// */
+
+#separator{
+    height: 300px;
+    width: 200px;
+    background-color:yellow;
+}
+
+.card-header{
+    background-color:rgb(64, 9, 231); 
+    font-family: 'Rock Salt', cursive;
+    font-size: 2em;
+    color: #ffffff;
+}
+
+/* .card-body{
+    color: #ffffff;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+} */
+
+.card{
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+    box-shadow: 25px 25px 50px rgb(0,0,0,0.5);
+
+}
