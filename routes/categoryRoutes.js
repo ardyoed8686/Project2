@@ -20,12 +20,19 @@ module.exports = function(app) {
   });
 
   // Update
-// app.update()
+  app.put("/api/category/:id", function(req, res) {
+    db.Category.update({
+      type: req.body.type
+    },
+    {where: { id: req.params.id } }).then(function(dbCategory) {
+      res.json(dbCategory);
+    });
+  });
 
   // Delete an example by id
-  // app.delete("/api/examples/:id", function(req, res) {
-  //   db.Category.destroy({ where: { id: req.params.id } }).then(function(dbCategory) {
-  //     res.json(dbCategory);
-  //   });
-  // });
+  app.delete("/api/category/:id", function(req, res) {
+    db.Category.destroy({ where: { id: req.params.id } }).then(function(dbCategory) {
+      res.json(dbCategory);
+    });
+  });
 };

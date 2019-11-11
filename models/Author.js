@@ -2,8 +2,6 @@
 module.exports = function(sequelize, DataTypes) {
   var Author = sequelize.define("Author", {
     name: DataTypes.STRING,
-    timestamps:false
-    
     // photo: DataTypes.TEXT
   });
     Author.associate = function(models){

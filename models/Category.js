@@ -6,7 +6,6 @@ module.exports = function(sequelize, DataTypes) {
     var Category = sequelize.define("Category", {
       
       type: DataTypes.STRING,
-      timestamps:false
     });
     Category.associate = function(models){
         
