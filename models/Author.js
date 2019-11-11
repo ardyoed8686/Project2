@@ -4,14 +4,14 @@ module.exports = function(sequelize, DataTypes) {
     name: DataTypes.STRING,
     // photo: DataTypes.TEXT
   });
-    Author.associate = function(models){
+    // Author.associate = function(models){
 
         // This will continue to throw an error as long as post does not exist in the models directory.
 
         // This is associating Author to the Task that is done.
-        Author.hasMany(models.Task, {
-            foreignKey: "taskId"
-          });
-    };
+        // Author.hasMany(models.Task, {
+        //     foreignKey: "taskId"
+        //   });
+    // };
   return Author;
 };

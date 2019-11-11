@@ -1,26 +1,26 @@
 <div class="container">
 
         </div>
-        <form class="clearfix mb-4" action="/api/process-form" method='POST'>
-          <div class="form-group">
+        <form class="clearfix mb-4" action="/api/tasks" method='POST'>
+          {{!-- <div class="form-group">
             <label for="example-text">Name</label>
             <input name='author' type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Your Name Here...">
           </div>
           <div class="form-group">
             <label for="example-description">Category</label>
             <textarea name='category'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Category..."></textarea>
-          </div>
+          </div> --}}
             <div class="form-group">
             <label for="example-description">Task Name</label>
-            <textarea name='category'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Category..."></textarea>
+            <textarea name='task-name'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Title..."></textarea>
           </div>
            <div class="form-group">
             <label for="example-description">Task Description</label>
-            <textarea name='task'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Task..."></textarea>
+            <textarea name='description'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Task..."></textarea>
           </div>
             <div class="form-group">
             <label for="example-description">Due Date</label>
-            <textarea name='task'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Task..."></textarea>
+            <textarea name='due-date'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Task..."></textarea>
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>

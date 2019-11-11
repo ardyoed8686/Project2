@@ -21,13 +21,19 @@ module.exports = function(app) {
   //   });
   // });
 
+  // AWESOME WORKS!!
    app.get("/task", function(req, res) {
     db.Task.findAll({
        }).then(function(dbTask) {
-         console.log("what is " + JSON.stringify(dbTask));
+        //  console.log("what is " + JSON.stringify(dbTask));
          var todo = {toDoList:dbTask };
       res.render("index", todo);
     });
+  });
+
+  // render the add task browser view
+  app.get("/addTask", function(req, res) {
+      res.render("addForm");
   });
 
   // // Render 404 page for any unmatched routes

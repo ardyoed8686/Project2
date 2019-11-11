@@ -6,6 +6,7 @@ module.exports = function(app) {
   app.get("/api/tasks", function(req, res) {
    
     db.Task.findAll({}).then(function(dbTask) {
+      // console.log("This is " + dbTask);
       res.json(dbTask);
     });
   });
@@ -14,7 +15,7 @@ module.exports = function(app) {
   // Create a new TASKs
   app.post("/api/tasks", function(req, res) {
     // console.log(req. body);
-    console.log(req.body.task);
+    console.log("This is a new task" + req.body.task);
   
     db.Task.create({
       name: req.body.name,
@@ -22,7 +23,7 @@ module.exports = function(app) {
       due: req.body.due,
       complete: req.body.complete
      }).then(function(dbTask) {
-      res.json(dbTask);
+      res.redirect('/task')
     });
   });
 
