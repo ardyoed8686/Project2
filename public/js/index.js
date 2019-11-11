@@ -15,7 +15,7 @@ var API = {
   getExamples: function() {
     return $.ajax({
       url: "api/examples",
-      type: "GET"
+      type: "POST"
     });
   },
   deleteExample: function(id) {
@@ -91,12 +91,8 @@ var handleDeleteBtnClick = function() {
 };
 
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+// $submitBtn.on("click", handleFormSubmit);
+// $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 
-
-// Test 
-
-API.getCategories()
 

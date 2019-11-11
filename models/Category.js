@@ -7,18 +7,15 @@ module.exports = function(sequelize, DataTypes) {
       
       type: DataTypes.STRING,
     });
-    // Category.associate = function(models){
-
-        // This will continue to throw an error as long as post does not exist in the models directory.
-
-        // This is associating the Category to the post that is done.
-        // Category.belongsTo(models.Post, {
-        //     foreignKey: {
-        //       allowNull: false
-        //     }
-        //   });
-    // };
-    
+    Category.associate = function(models){
+        
+      // This will connect Category to the task id. 
+        Category.hasMany(models.Task,{
+          onDelete:'SET NULL',
+          onUpdate:'CASCADE'
+        });
+      }
+        
     return Category;
    
   };
