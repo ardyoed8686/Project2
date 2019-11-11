@@ -1,5 +1,3 @@
-
-
 var playPause = anime({
     targets: "div.box",
     translateY: [
@@ -11,13 +9,27 @@ var playPause = anime({
         easing: "easeInOutSine",
     } ,
 
-    backgroundColor : "#808080",
+    backgroundColor : "rgb(72, 72, 73)",
+    color: "rgb(64, 9, 231)",
     delay : function(el, i, j){return i * 500},
 
-    // 111111. below if set on "true" will pay automatically once page is open and if set on "false " will go w/event 22222 below to execute button control function
+
     autoplay : true,
 });
 
 playPause.play();
+
+
+// /////////////////MODDAL///////////////////////////////
+$('#exampleModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    var recipient = button.data('whatever') // Extract info from data-* attributes
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var modal = $(this)
+    modal.find('.modal-title').text('New message to ' + recipient)
+    modal.find('.modal-body input').val(recipient)
+  })
+
 
 
