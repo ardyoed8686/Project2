@@ -6,6 +6,13 @@ module.exports = function(app) {
     db.Author.findAll({}).then(function(dbAuthor) {
       res.json(dbAuthor);
     });
+
+    
+    // db.Author.findAll({}).then(dbAuthor => {
+    //   // projects will be an array of Project instances with the specified name
+    //   res.json(dbAuthor);
+    // })
+    
   });
 
 
