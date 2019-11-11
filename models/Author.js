@@ -2,6 +2,8 @@
 module.exports = function(sequelize, DataTypes) {
   var Author = sequelize.define("Author", {
     name: DataTypes.STRING,
+    timestamps:false
+    
     // photo: DataTypes.TEXT
   });
     Author.associate = function(models){
@@ -10,15 +12,11 @@ module.exports = function(sequelize, DataTypes) {
 
         // This is associating Author to the Task that is done.
         Author.hasMany(models.Task, {
-            // foreignKey: {
-            //   allowNull: false
-            // }
+            foreignKey: "taskId"
           });
 
         Author.hasMany(models.Category, {
-            // foreignKey: {
-            //   allowNull: false
-            // }
+            foreignKey:'categoryId'
           });
     };
   return Author;

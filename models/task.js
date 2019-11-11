@@ -12,9 +12,9 @@ module.exports = function(sequelize, DataTypes) {
     // A Task should belong to an Author
     // A Task can't be created without an Author due to the foreign key constraint
     Task.belongsTo(models.Author, {
-      foreignKey: {
-        allowNull: false
-      }
+      // foreignKey: {
+      //   allowNull: false
+      // }
     });
 
 
