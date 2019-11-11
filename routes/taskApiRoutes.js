@@ -14,18 +14,25 @@ module.exports = function(app) {
 
   // Create a new TASKs
   app.post("/api/tasks", function(req, res) {
-    // console.log(req. body);
-    console.log("This is a new task" + req.body.task);
+    console.log(req. body);
+    console.log("This is a new task" + req.body.name);
   
-    db.Task.create({
-      name: req.body.name,
-      description: req.body.description,
-      due: req.body.due,
-      complete: req.body.complete
-     }).then(function(dbTask) {
-      res.redirect('/task')
-    });
-  });
+    db.Category.findOne({
+      where: {type: req.body.type}
+    }).then (function(results){
+      console.log(results)
+    }
+    )
+  }
+    // db.Task.create({
+    //   name: req.body.name,
+    //   description: req.body.description,
+    //   due: req.body.due,
+    //   complete: req.body.complete
+    //  }).then(function(dbTask) {
+    //   res.redirect('/task')
+    // });
+  // });
 
 
   // Delete an TASKs by id
