@@ -16,6 +16,8 @@ module.exports = function(app) {
   app.post("/api/tasks", function(req, res) {
     db.Task.create({
       name: req.body.name,
+      type: req.body.type,
+      title: req.body.title,
       description: req.body.description,
       due: req.body.due,
       complete: req.body.complete
@@ -76,6 +78,8 @@ module.exports = function(app) {
   app.put("/api/tasks/:id", function(req, res) {
     db.Task.update({
       name: req.body.name,
+      type: req.body.type,
+      title: req.body.title,
       description: req.body.description,
       due: req.body.due,
       complete: req.body.complete

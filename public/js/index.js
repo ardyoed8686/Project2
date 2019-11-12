@@ -3,6 +3,7 @@ var $taskText = $("#example-text");
 var $taskDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $taskList = $("#example-list");
+const anime = require('anime');
 
 // The API object contains methods for each kind of request we'll make
 // get tasks
@@ -96,4 +97,15 @@ var handleDeleteBtnClick = function() {
 // $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 
+console.log("hello world");
+
+// anime({
+//   targets:$('#p-tag'),
+//   strokeDashoffset: [anime.setDashoffset, 0],
+//   easing: 'easeInOutSine',
+//   duration: 1500,
+//   delay: function(el, i) { return i * 250 },
+//   direction: 'alternate',
+//   loop: true
+// });
 

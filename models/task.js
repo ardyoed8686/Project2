@@ -2,19 +2,21 @@
 module.exports = function(sequelize, DataTypes) {
   var Task = sequelize.define("Task", {
     name: DataTypes.STRING,
+    type: DataTypes.STRING,
+    title: DataTypes.STRING,
     description: DataTypes.STRING,
     due: DataTypes.DATE,
-    complete: DataTypes.BOOLEAN
+    complete: {type: DataTypes.BOOLEAN, defaultValue: 0 }
   });
 
 
   Task.associate = function(models) {
 
-    Task.belongsTo(models.Category, {
-      as: "Category", 
-      onDelete: 'CASCADE', 
-      foreignKey: { name:'CategoryId', allowNull: false }
-  });
+  //   Task.belongsTo(models.Category, {
+  //     as: "Category", 
+  //     onDelete: 'CASCADE', 
+  //     foreignKey: { name:'CategoryId', allowNull: false }
+  // });
     // A Task should belong to an Author
     // A Task can't be created without an Author due to the foreign key constraint
     Task.belongsTo(models.Author, {
@@ -31,10 +33,10 @@ module.exports = function(sequelize, DataTypes) {
     allowNull: false
      }
     });
+ 
   }
-  
   return Task;
 
- 
+
 };
 

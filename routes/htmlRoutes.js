@@ -3,14 +3,17 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    res.render("home");
+   
+    res.render("home",{
+      style:"home.css"});
+    });
     // db.Author.findAll({}).then(function(dbAuthor) {
     //   res.render("index", {
     //     msg: "Welcome!",
     //     author: dbAuthor
     //   });
     // });
-  });
+  
 
   // Load author page and pass in an author by id
   // app.get("/author/:id", function(req, res) {

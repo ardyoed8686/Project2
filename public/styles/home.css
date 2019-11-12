@@ -1,0 +1,63 @@
+#background-vid {
+    zoom: 1.00;
+    position:relative;
+    bottom:50px;
+    
+}
+
+.navbar-brand {
+    font-family: 'Racing Sans One', cursive;
+    font-size: 30px;
+    color: #3C6B82;
+}
+
+body {
+    background-image:url('https://images.pexels.com/photos/247676/pexels-photo-247676.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=600')
+}
+
+#home-scheduler{
+    float:right;
+    margin-right:20px;
+}
+
+#home-input{
+    width:240px;
+    height:34px;
+}
+
+.navbar {
+    position:relative;
+    bottom:109px;
+   
+}
+
+.todo-img {
+    
+    margin:20px;
+    
+}
+
+.img-btn {
+    width: 170px;
+    height:150px;
+}
+
+.row {
+   color:white;
+    position:absolute;
+    top:400px;
+    
+
+}
+
+.subtitle {
+    font:white;
+
+    
+}
+
+#brand-name {
+    font-family: 'Righteous', cursive;
+    font-size: 25px;
+}
+
