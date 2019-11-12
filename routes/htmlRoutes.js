@@ -28,7 +28,7 @@ module.exports = function(app) {
    app.get("/task", function(req, res) {
     db.Task.findAll({
        }).then(function(dbTask) {
-        //  console.log("what is " + JSON.stringify(dbTask));
+         console.log("what is " + JSON.stringify(dbTask));
          var todo = {toDoList:dbTask };
       res.render("index", todo);
     });
