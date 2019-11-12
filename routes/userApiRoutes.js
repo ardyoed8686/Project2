@@ -11,54 +11,67 @@ app.get("/api/user", function(req,res){
 });
 
 
-// This validates user log in.
-app.get("/api/login_data", function(req,res){
-    db.User.findOne({where:{username:"Gassy", password:"mobius1"}}).then(function(dbUser){
+
+
+
+
+
+
+
+
+
+// This checks to see that username and password exists in the database.
+
+app.post("/api/login_data", function(req,res){
+    var usr = req.body.userName;
+    var usrPassword = req.body.userPassword
+   
+
+    db.User.findOne({where:{ username:usr, password:usrPassword}}).then(function(dbUser){
         
         if(dbUser === null){
             res.send("Sorry we have no record of the username/password you entered. Please try again or sign up.");
 
         }else if (dbUser){
-            res.send("Welcome " + dbUser.username + "!");
+            
         }
         console.log(dbUser)
 
         }); 
 
-    // res.json(dbUser);
+   
 });
 
 
-app.post("/api/login", function(req, res){
+// This adds the user to database and checks that the user does not match any other user name in the database.
+    app.post("/api/user", function(req, res){
 
-var usr = req.body.userLogin;
-var usrpassword = req.body.userPassword
+        var usr = req.body.username;
+        var passW = req.body.password;
+        var img = req.body.img_url;
 
-app.get("/api/login_data", function(req,res){
-    db.User.findAll({where:{username:usr, password:usrpassword}}).then(function(dbUser){
-        res.json(dbUser.length)
-       }); 
-});
+   
+            db.User.findOne({where:{username:usr}}).then(function(dbUser){
+                    
+            if(dbUser){
+            res.send("This user name is already in use. Please choose another.");
+            }
+            else{
+                        
+            db.User.create({
+                username:usr,
+                password:passW,
+                img_url:img
+            }).then(function(dbUser){
+                console.log(dbUser);
+                res.json(dbUser)
+            });
+
+            }  
+
+            });
 
 
-
-});
-
-app.post("/api/user", function(req, res){
-
-    var usr = req.body.username;
-    var passW = req.body.password;
-    var img = req.body.img_url;
-
-    db.User.create({
-        username:usr,
-        password:passW,
-        img_url:img
-    }).then(function(dbUser){
-        console.log(dbUser);
-        res.json(dbUser)
     });
-
-});
 
 }
