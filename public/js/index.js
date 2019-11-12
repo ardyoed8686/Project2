@@ -16,19 +16,20 @@ var API = {
       url: "api/tasks",
     });
   },
-  getTasks: function() {
+  saveTasks: function(task) {
     return $.ajax({
       url: "api/tasks",
-      type: "POST"
+      type: "POST",
+      data: task
     });
   },
-  deleteExample: function(id) {
+  updateTask: function(id) {
     return $.ajax({
       url: "api/tasks/" + id,
       type: "PUT"
     });
   },
-  deleteExample: function(id) {
+  deleteTask: function(id) {
     return $.ajax({
       url: "api/tasks/" + id,
       type: "DELETE"
@@ -38,8 +39,10 @@ var API = {
 
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshTasks = function() {
+  
   API.getTasks().then(function(data) {
-    var $tasks = data.map(function(example) {
+    console.log(data)
+    var $tasks = data.map(function(task) {
       var $a = $("<a>")
         .text(task.text)
         .attr("href", "/api/" + task.id);
@@ -80,7 +83,7 @@ var handleFormSubmit = function(event) {
     return;
   }
 
-  API.savetask(task).then(function() {
+  API.saveTasks(task).then(function() {
     refreshTasks();
   });
 
@@ -94,6 +97,7 @@ var handleDeleteBtnClick = function() {
   var idToDelete = $(this)
     .parent()
     .attr("data-id");
+    console.log($(this).parent())
 
   API.deleteTask(idToDelete).then(function() {
     refreshTasks();
@@ -102,7 +106,11 @@ var handleDeleteBtnClick = function() {
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$taskList.on("click", ".delete", handleDeleteBtnClick);
+// $submitBtn.on("click", function(){
+//   console.log("Geclikt");
+// }); 
+// $taskList.on("click", ".delete", handleDeleteBtnClick);
+$(".delete").click(handleDeleteBtnClick);
 
 
 console.log("hello world");
