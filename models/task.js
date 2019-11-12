@@ -27,12 +27,12 @@ module.exports = function(sequelize, DataTypes) {
 
     // A Task should belong to an Category
     // A Task can't be created without a Category due to the foreign key constraint
-    models.Task.belongsTo(models.Category, {
-      foreignKey: {
-        allowNull: false,
-        defaultValue: 1
-      }
-    });
+    // models.Task.belongsTo(models.Category, {
+    //   foreignKey: {
+    //     allowNull: false,
+    //     defaultValue: 1
+    //   }
+    // });
   }
   
   return Task;
