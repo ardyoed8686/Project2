@@ -8,7 +8,7 @@
         <h3>My Task List:</h3>
         {{#each toDoList}}
           <div class="card" style="">
-            <div class="card-body">
+            <div class="card-body" data-id="{{id}}">
               {{!-- <h5 class="card-title">Card title</h5>
               <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> --}}
                 <ul id="task-list" class="list-group">
@@ -21,7 +21,7 @@
               </ul>
               {{!-- <a href="#" class="card-link">Card link</a>
               <a href="#" class="card-link">Another link</a> --}}
-              <button id="delete" type="button" class="btn btn-danger">X</button>
+              <button id="delete" type="button" class="btn btn-danger delete">X</button>
             </div>
           </div>
         {{/each}}
