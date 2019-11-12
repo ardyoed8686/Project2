@@ -1,3 +1,35 @@
+<div id="home">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Check IT!</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+
+    <ul class="navbar-nav">
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="/addTask">Create Your List</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/task">Go To Your List</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2">
+        <h1>{{msg}}</h1>
+
+
+        {{!-- NAVBAR --}}
+
 <div class="container">
 
         </div>
@@ -26,6 +58,17 @@
         </form>
 
 
-<a href="/">← Back To Home</a>
-<a href="/index">← See your list</a>
+{{!-- BOTTOM --}}
+<nav class="navbar navbar-expand-lg fixed-bottom navbar-light">
+  {{!-- <a class="navbar-brand" href="#">Fixed bottom</a> --}}
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">← Back To Home</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/task">← See your list</a>
+      </li>
+    </ul>
+</nav>
 </div>
