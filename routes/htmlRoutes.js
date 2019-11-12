@@ -24,11 +24,6 @@ module.exports = function(app) {
   //   });
   // });
 
-  app.get("/api/process-form", function(req, res) {
-   
-    res.render("addForm");
-  });
-
   // AWESOME WORKS!!
    app.get("/task", function(req, res) {
     db.Task.findAll({
