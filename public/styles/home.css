@@ -21,7 +21,7 @@ body {
 }
 
 #home-input{
-    width:300px;
+    width:240px;
     height:34px;
 }
 
@@ -45,11 +45,19 @@ body {
 .row {
    color:white;
     position:absolute;
-    top:350px;
+    top:400px;
     
 
 }
 
 .subtitle {
     font:white;
+
+    
 }
+
+#brand-name {
+    font-family: 'Righteous', cursive;
+    font-size: 25px;
+}
+

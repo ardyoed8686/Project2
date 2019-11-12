@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html>
 
-
-
-
-
-{{!-- <video controls width="100%" height="1000" loop autoplay>
-<source src="https://www.youtube.com/watch?v=26U_seo0a1g" type='video/mp4'>
-</video> --}}
+<script src="https://unpkg.com/eva-icons"></script>
+<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
 
 <body>
-<iframe id="background-vid" src="https://www.youtube-nocookie.com/embed/26U_seo0a1g?start=225&modestbranding=0&showinfo=0&rel=0&iv_load_policy=3&theme=light&fs=0&autohide=1&controls=0&disablekb=0&autoplay=1&mute=1&loop=1" allow="autoplay" width="100%" height="400" frameborder="0"></iframe>
-{{!-- 
-/embed/26U_seo0a1g?start=225&autoplay=1&loop=1&showinfo=0&rel=0&iv_load_policy=3&theme=light&fs=0&autohide=1&controls=0&disablekb=0 --}}
+<iframe id="background-vid" src="https://www.youtube-nocookie.com/embed/26U_seo0a1g?start=235&modestbranding=0&showinfo=0&rel=0&iv_load_policy=3&theme=light&fs=0&autohide=1&controls=0&disablekb=0&autoplay=1&mute=1&loop=1" allow="autoplay" width="100%" height="400" frameborder="0"></iframe>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
 
 <nav class="navbar navbar-light bg-light justify-content-between">
+<<<<<<< HEAD
   <a class="navbar-brand" style="color:#3C6B82;">CheckIt!</a>
+=======
+  <a class="navbar-brand" id='brand-name'>ResponsibiliTeen</a>
+  <button><i data-eva="home" data-eva-fill="black" data-eva-height="48" data-eva-width="48"></i></button>
+  <button action="/api/process-form" type="submit"><i data-eva="plus-circle-outline" data-eva-fill="black" data-eva-height="48" data-eva-width="48"></i></button>
+  <button><i data-eva="calendar-outline" data-eva-fill="black" data-eva-height="48" data-eva-width="48"></i></button>
+  <button><i data-eva="alert-circle-outline" data-eva-fill="black" data-eva-height="48" data-eva-width="48"></i></button>
+
+
+>>>>>>> e1da20790748869ac450898e850aee790442a7f8
   <form class="form-inline">
     <div id="home-scheduler">
 <input id="home-input" placeholder= "What do you need to schedule?">
@@ -52,22 +53,18 @@
   
   <figcaption class="subtitle" align="center">Completed To Do's<figcaption></figcaption>
 </div>
+
 </div>
 
+
+
+    <script>
+      eva.replace()
+    </script>
+
+
+
+
 </body>
-
-{{!-- <script>
-$('#start-btn').on('click',function(event){
-event.preventDefault();
-
-$.ajax(
-  method:'GET',
-  url: "/api/process-form"
-)
-
-
-});
-
-</script> --}}
 
 </html>
