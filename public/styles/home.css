@@ -5,6 +5,12 @@
     
 }
 
+.navbar-brand {
+    font-family: 'Racing Sans One', cursive;
+    font-size: 30px;
+    color: #3C6B82;
+}
+
 body {
     background-image:url('https://images.pexels.com/photos/247676/pexels-photo-247676.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=600')
 }

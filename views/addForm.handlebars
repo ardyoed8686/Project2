@@ -1,31 +1,39 @@
+
 <div class="container">
+<section>
+   <h2>CheckIt!</h2>
+</section>
+<hr>
+        
+  <form class="clearfix mb-4" action="/api/tasks" method='POST'>
+    <div class="form-group">
+      <label for="author-name">Name</label>
+      <input name='author' type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Your Name Here...">
+    </div>
+    <div class="form-group">
+      <label for="name">Category</label>
+      <input name='type'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Category..."></textarea>
+    </div>
+      <div class="form-group">
+      <label for="example-description">Task Name</label>
+      <input name='name'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Title..."></textarea>
+    </div>
+      <div class="form-group">
+      <label for="example-description">Task Description</label>
+      <textarea name='description'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Task..."></textarea>
+    </div>
+      <div class="form-group">
+      <label for="example-description">Due Date</label>
+      <textarea name='due'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Task..."></textarea>
+    </div>
+    <button id="submit" class="btn btn-primary float-right">Submit</button>
+  </form>
 
-        </div>
-        <form class="clearfix mb-4" action="/api/tasks" method='POST'>
-          <div class="form-group">
-            <label for="author-name">Name</label>
-            <input name='author' type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Your Name Here...">
-          </div>
-          <div class="form-group">
-            <label for="name">Category</label>
-            <textarea name='type'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Category..."></textarea>
-          </div>
-            <div class="form-group">
-            <label for="example-description">Task Name</label>
-            <textarea name='name'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Title..."></textarea>
-          </div>
-           <div class="form-group">
-            <label for="example-description">Task Description</label>
-            <textarea name='description'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Task..."></textarea>
-          </div>
-            <div class="form-group">
-            <label for="example-description">Due Date</label>
-            <textarea name='due'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Task..."></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
 
 
-<a href="/">← Back To Home</a>
-<a href="/index">← See your list</a>
 </div>
+<footer>
+<a href="/">Back To Home</a>
+ | 
+<a href="/task">See your list</a>
+</footer>

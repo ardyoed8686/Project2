@@ -2,3 +2,9 @@
   line-height: 2.5;
 }
 
+h2 {
+  text-align: left ;
+  font-family: 'Racing Sans One', cursive;
+  font-size: 30px;
+  color: #3C6B82;
+}

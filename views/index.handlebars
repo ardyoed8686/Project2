@@ -1,27 +1,39 @@
+
+
 <div id="List">
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
         <h1>{{msg}}</h1>
-        <h2>Check IT!</h2>
+        <h2>CheckIt!</h2>
+        <hr>
+        <h3>My Task List:</h3>
+          <div class="card" style="">
+            <div class="card-body">
+              {{!-- <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> --}}
+                <ul id="task-list" class="list-group">
 
-
-        <h3>My to-do list:</h3>
-        <ul id="task-list" class="list-group">
-          {{#each toDoList}}
-          <li>{{name}}</li>
-          <li>{{description}}</li>
-          <li>{{due}}</li>
-          <li>{{completed}}</li>
-          
-          {{/each}}
-        </ul>
+                {{#each toDoList}}
+                <li>{{name}}</li>
+                <li>{{description}}</li>
+                <li>{{due}}</li>
+                <li>{{completed}}</li>
+                
+                {{/each}}
+              </ul>
+              {{!-- <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a> --}}
+            </div>
+          </div>
       </div>
     </div>
   </div>
 </div>
-
-<a href="/">← Back To Home</a>
+<footer>
+<a href="/">Back To Home</a> | 
+<a href="/addTask">Add a Task</a>  
+</footer>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
