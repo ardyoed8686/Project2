@@ -1,6 +1,9 @@
 // Get references to page elements
+var $taskName = $("#name-text");
+var $taskType = $("#category-description");
 var $taskTitle = $("#title-description");
 var $taskDescription = $("#task-description");
+var $taskDue = $("#date-description");
 var $submitBtn = $("#submit");
 var $taskList = $("#task-list");
 var $deleteBtn = $("#delete");
@@ -16,7 +19,7 @@ var API = {
       url: "api/tasks",
     });
   },
-  saveTasks: function(task) {
+  saveTask: function(task) {
     return $.ajax({
       url: "api/tasks",
       type: "POST",
@@ -41,7 +44,7 @@ var API = {
 var refreshTasks = function() {
   
   API.getTasks().then(function(data) {
-    console.log(data)
+    console.log("This is the data" + data)
     var $tasks = data.map(function(task) {
       var $a = $("<a>")
         .text(task.text)
@@ -49,7 +52,7 @@ var refreshTasks = function() {
 
       var $li = $("<li>")
         .attr({
-          class: "list-group-item",
+          class: "list-group",
           "data-id": task.id
         })
         .append($a);
@@ -62,7 +65,7 @@ var refreshTasks = function() {
 
       return $li;
     });
-
+console.log("what is the taskList", $taskList)
     $taskList.empty();
     $taskList.append($tasks);
   });
@@ -74,8 +77,11 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var task = {
+    name: $taskName.val().trim(),
+    type: $taskType.val().trim(),
     title: $taskTitle.val().trim(),
-    description: $taskDescription.val().trim()
+    description: $taskDescription.val().trim(),
+    due: $taskDue.val().trim()
   };
 
   if (!(task.title && task.description)) {
@@ -83,23 +89,29 @@ var handleFormSubmit = function(event) {
     return;
   }
 
-  API.saveTasks(task).then(function() {
+  API.saveTask(task).then(function() {
     refreshTasks();
   });
 
+  $taskName.val("");
+  $taskType.val("");
   $taskTitle.val("");
   $taskDescription.val("");
+  $taskDue.val("");
 };
 
 // handleDeleteBtnClick is called when a tasks's delete button is clicked
 // Remove the task from the db and refresh the list
 var handleDeleteBtnClick = function() {
   var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
+    // .parent()
+    .attr("id");
     console.log($(this).parent())
+    console.log(idToDelete)
+    $(this).parent().parent().parent().empty();
 
   API.deleteTask(idToDelete).then(function() {
+
     refreshTasks();
   });
 };

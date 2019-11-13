@@ -8,3 +8,7 @@ h2 {
   font-size: 30px;
   color: #3C6B82;
 }
+
+.delete {
+  float: right;
+}
