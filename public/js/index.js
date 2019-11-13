@@ -1,9 +1,14 @@
 // Get references to page elements
-var $taskText = $("#example-text");
-var $taskDescription = $("#example-description");
+var $taskName = $("#name-text");
+var $taskType = $("#category-description");
+var $taskTitle = $("#title-description");
+var $taskDescription = $("#task-description");
+var $taskDue = $("#date-description");
 var $submitBtn = $("#submit");
-var $taskList = $("#example-list");
-const anime = require('anime');
+var $taskList = $("#task-list");
+var $deleteBtn = $("#delete");
+
+
 
 // The API object contains methods for each kind of request we'll make
 // get tasks
@@ -11,34 +16,43 @@ var API = {
   getTasks: function() {
     return $.ajax({
       type: "GET",
-      url: "api/task",
+      url: "api/tasks",
     });
   },
-  getTasks: function() {
+  saveTask: function(task) {
     return $.ajax({
-      url: "api/task",
-      type: "POST"
+      url: "api/tasks",
+      type: "POST",
+      data: task
     });
   },
-  deleteExample: function(id) {
+  updateTask: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/tasks/" + id,
+      type: "PUT"
+    });
+  },
+  deleteTask: function(id) {
+    return $.ajax({
+      url: "api/tasks/" + id,
       type: "DELETE"
     });
   }
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
+var refreshTasks = function() {
+  
   API.getTasks().then(function(data) {
-    var $tasks = data.map(function(example) {
+    console.log("This is the data" + data)
+    var $tasks = data.map(function(task) {
       var $a = $("<a>")
         .text(task.text)
         .attr("href", "/api/" + task.id);
 
       var $li = $("<li>")
         .attr({
-          class: "list-group-item",
+          class: "list-group",
           "data-id": task.id
         })
         .append($a);
@@ -51,61 +65,66 @@ var refreshExamples = function() {
 
       return $li;
     });
-
+console.log("what is the taskList", $taskList)
     $taskList.empty();
     $taskList.append($tasks);
   });
 };
 
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
+// handleFormSubmit is called whenever we submit a new task
+// Save the new task to the db and refresh the list
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var task = {
-    text: $taskText.val().trim(),
-    description: $taskDescription.val().trim()
+    name: $taskName.val().trim(),
+    type: $taskType.val().trim(),
+    title: $taskTitle.val().trim(),
+    description: $taskDescription.val().trim(),
+    due: $taskDue.val().trim()
   };
 
-  if (!(task.text && task.description)) {
-    alert("You must enter an example text and description!");
+  if (!(task.title && task.description)) {
+    alert("You must enter a task title and description!");
     return;
   }
 
-  API.savetask(task).then(function() {
+  API.saveTask(task).then(function() {
     refreshTasks();
   });
 
-  $taskText.val("");
+  $taskName.val("");
+  $taskType.val("");
+  $taskTitle.val("");
   $taskDescription.val("");
+  $taskDue.val("");
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
+// handleDeleteBtnClick is called when a tasks's delete button is clicked
+// Remove the task from the db and refresh the list
 var handleDeleteBtnClick = function() {
   var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
+    // .parent()
+    .attr("id");
+    console.log($(this).parent())
+    console.log(idToDelete)
+    $(this).parent().parent().parent().empty();
 
   API.deleteTask(idToDelete).then(function() {
+
     refreshTasks();
   });
 };
 
 // Add event listeners to the submit and delete buttons
-// $submitBtn.on("click", handleFormSubmit);
-// $exampleList.on("click", ".delete", handleDeleteBtnClick);
+$submitBtn.on("click", handleFormSubmit);
+// $submitBtn.on("click", function(){
+//   console.log("Geclikt");
+// }); 
+// $taskList.on("click", ".delete", handleDeleteBtnClick);
+$(".delete").click(handleDeleteBtnClick);
 
 
 console.log("hello world");
 
-// anime({
-//   targets:$('#p-tag'),
-//   strokeDashoffset: [anime.setDashoffset, 0],
-//   easing: 'easeInOutSine',
-//   duration: 1500,
-//   delay: function(el, i) { return i * 250 },
-//   direction: 'alternate',
-//   loop: true
-// });
 

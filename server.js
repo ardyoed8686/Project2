@@ -1,6 +1,8 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
+// require moment.js npm package
+// var moment = require("moment");
 
 var db = require("./models");
 
@@ -27,7 +29,8 @@ app.set("view engine", "handlebars");
 require("./routes/categoryRoutes")(app);
 require("./routes/authorApiRoutes")(app);
 require("./routes/htmlRoutes")(app);
-require("./routes/taskApiRoutes.js")(app);
+require("./routes/taskApiRoutes.js")(app); 
+require("./routes/userApiRoutes.js")(app);
 // require("./routes/userRoutes.js")(app);
 
 

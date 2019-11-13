@@ -39,23 +39,23 @@
   <form class="clearfix mb-4" action="/api/tasks" method='POST'>
     <div class="form-group">
       <label for="author-name">Name</label>
-      <input name='author' type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Your Name Here...">
+      <input name='name' type="text" id="name-text" class="form-control" aria-describedby="example-text" placeholder="Your Name Here...">
     </div>
     <div class="form-group">
-      <label for="name">Category</label>
-      <input name='type'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Category..."></textarea>
+      <label for="category">Category</label>
+      <input name='type'class="form-control" id="category-description" aria-describedby="example-description" placeholder="Enter Category for your task...">
     </div>
       <div class="form-group">
       <label for="example-description">Task Name</label>
-      <input name='name'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Title..."></textarea>
+      <input name='title'class="form-control" id="title-description" aria-describedby="example-description" placeholder="Enter Title...">
     </div>
       <div class="form-group">
-      <label for="example-description">Task Description</label>
-      <textarea name='description'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Task..."></textarea>
+      <label for="to-do-description">Task Description</label>
+      <textarea name='description'class="form-control" id="task-description" aria-describedby="example-description" placeholder="Describe Your Task..."></textarea>
     </div>
       <div class="form-group">
-      <label for="example-description">Due Date</label>
-      <textarea name='due'class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Task..."></textarea>
+      <label for="due-date-description">Due Date</label>
+      <input type="date" name='due'class="form-control" id="date-description" aria-describedby="example-description" placeholder="Enter Task Due Date...">
     </div>
     <button id="submit" class="btn btn-primary float-right">Submit</button>
   </form>
