@@ -8,4 +8,12 @@ h2 {
   font-family: 'Racing Sans One', cursive;
   font-size: 30px;
   color: #3C6B82;
+<<<<<<< HEAD
 } */
+=======
+}
+
+.delete {
+  float: right;
+}
+>>>>>>> 84ba30376912cf8257737378aa18542267e354cc
