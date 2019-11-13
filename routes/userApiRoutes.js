@@ -50,6 +50,8 @@ app.post("/api/login_data", function(req,res){
         var passW = req.body.password;
         var img = req.body.img_url;
 
+        console.log(usr,passW,img)
+
             db.User.findOne({where:{username:usr}}).then(function(dbUser){
                     
             if(dbUser){
