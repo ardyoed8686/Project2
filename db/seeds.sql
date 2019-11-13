@@ -1,3 +1,4 @@
+USE todo_db;
 -- create default category --
 INSERT INTO Task (name, type, title, description, due) 
 VALUES ('John', 'chores', 'laundry', 'wash bedding', '11/15/2019');
