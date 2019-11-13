@@ -38,8 +38,8 @@ app.post("/api/login_data", function(req,res){
         console.log(dbUser)
 
         }); 
+// Redirects to home temporarily.
 
-   
 });
 
 
