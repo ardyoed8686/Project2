@@ -41,27 +41,29 @@ When you are done just... CheckIt!</h3>
      <div class="box2">
       <h3 class="content-title"></h3>
 
-
+<form action='/api/user' method="POST">
 <div class="form-group">
 
    <div class="input">
-    <input type="username" class="col-md-8 mb-3" id="InputUsername1" placeholder="Password"><a href="api/" target="_blank"></a>
+    <input name="username" class="col-md-8 mb-3" id="username" placeholder="Username">
     </div>
 
    <div class="input">
-    <input type="password" class="col-md-8 mb-3" id="InputPassword1" placeholder="Username"><a href="api/" target="_blank"></a>
+    <input name="password" type="password" class="col-md-8 mb-3" id="password" placeholder="Password">
      </div>
 
     <div class="input">
-    <input type="URL" class="col-md-8 mb-3"id="InputPassword1" placeholder="URL"><a href="api/" target="_blank"></a>
+    <input name="url_img" class="col-md-8 mb-3"id="url-img" placeholder="URL">
     </div>
 
-    <button type="submit" class="btn btn1 col-md-8 mb-3"><a href="/" target="_blank" id="link1">Sign Up</a></button>
+    <button type="submit" class="btn btn1 col-md-8 mb-3">Sign Up</button>
 
-    <button type="submit" class="btn btn2 col-md-8 mb-3"><a href="/" target="_blank" id="link2">Log In</a></button>
+
 
   </div>
 
+  </form>
+<button type="submit" class="btn btn2 col-md-8 mb-3"><a href="/" target="_blank" id="link2">Log In</a></button>
     </div>
 
   </section>
