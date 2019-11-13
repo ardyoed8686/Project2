@@ -33,7 +33,7 @@ app.post("/api/login_data", function(req,res){
             res.send("Sorry we have no record of the username/password you entered. Please try again or sign up.");
 
         }else if (dbUser){
-            
+            res.redirect('/')
         }
         console.log(dbUser)
 
@@ -55,7 +55,8 @@ app.post("/api/login_data", function(req,res){
             db.User.findOne({where:{username:usr}}).then(function(dbUser){
                     
             if(dbUser){
-            res.send("This user name is already in use. Please choose another.");
+            console.log("This user name is already in use. Please choose another.");
+            
             }
             else{
                         
@@ -65,7 +66,7 @@ app.post("/api/login_data", function(req,res){
                 img_url:img
             }).then(function(dbUser){
                 console.log(dbUser);
-                res.json(dbUser)
+                res.redirect("/")
             });
 
             }  
