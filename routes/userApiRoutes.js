@@ -55,7 +55,8 @@ app.post("/api/login_data", function(req,res){
             db.User.findOne({where:{username:usr}}).then(function(dbUser){
                     
             if(dbUser){
-            res.send("This user name is already in use. Please choose another.");
+            console.log("This user name is already in use. Please choose another.");
+            
             }
             else{
                         
