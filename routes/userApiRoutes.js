@@ -33,7 +33,7 @@ app.post("/api/login_data", function(req,res){
             res.send("Sorry we have no record of the username/password you entered. Please try again or sign up.");
 
         }else if (dbUser){
-            
+            res.redirect('/')
         }
         console.log(dbUser)
 
@@ -66,7 +66,7 @@ app.post("/api/login_data", function(req,res){
                 img_url:img
             }).then(function(dbUser){
                 console.log(dbUser);
-                res.json(dbUser)
+                res.redirect("/")
             });
 
             }  
