@@ -2,14 +2,18 @@
 
 {{!-- NAV BAR --}}
 
-{{!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> --}}
-<nav class="navbar navbar-light bg-light ">
+{{!-- <nav class="navbar navbar-expand-lg navbar-light"> --}}
+<nav class="navbar navbar-light ">
 
   <a class="navbar-brand"><h2>CheckIt!</h2></a>
 
   <a class="nav-link" href="/"><i data-eva="home" data-eva-fill="black" data-eva-height="48" data-eva-width="48"></i></a>
+  
   <a class="nav-link" href="/addTask"><i data-eva="plus-circle-outline" data-eva-fill="black" data-eva-height="48" data-eva-width="48"></i></a>
+
   <a class="nav-link" href="/task"><i data-eva="calendar-outline" data-eva-fill="black" data-eva-height="48" data-eva-width="48"></i></a>
+
+</div>
 
   <script>
       eva.replace();
@@ -17,58 +21,48 @@
   
 </nav>
 
-{{!-- HEADER--}}
-<header id="showcase" class="grid">
-  <div class="bg-image"></div>
-  <div class="content-wrap">
-  <h1>Welcome to our App</h1>
-  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt distinctio laudantium quod, tenetur omnis molestiae illum aliquid suscipit accusantium velit quo, saepe eum harum ipsam ducimus numquam ullam praesentium possimus.</p>
-  <a href="#" class="btn">Read More</a>
-</div>
-</header>
-
 
 {{!-- MAIN BODY --}}
 
 <main id="main">
-{{!-- SECTION -A --}}
-  <section id="section-a" class="grid">
-    <div class="content-wrap">
-      <h1 class="content-title">Sign In Here</h1>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi architecto voluptas dicta ad perferendis ex ullam id eius obcaecati facere? In expedita nisi, quidem nulla tenetur iure explicabo ratione atque!Lorem</p>
-    </div>
-  </section>
-
-  {{!-- SECTION -B --}}
-  <section id="section-b" class="grid">
-    <div class="content-wrap">
-    <ul>
-      <li>
-        <div class="card">
-          <img src="https://images.pexels.com/photos/1629212/pexels-photo-1629212.jpeg?cs=srgb&dl=notes-sticky-notes-sunlight-1629212.jpg&fm=jpg" alt="Photo by Min An from Pexels">
-         <div class="card-content">
-           <h3 class="card-title">This your Awesome App</h3>
-           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus alias porro cupiditate iste! Blanditiis similique aut eos deserunt cumque. Laborer aspernatur ex quia doloremque ipsum expedita a, et voluptate explicabo.</p>
-         </div>
-        </div>
-      </li>
-    </ul>
-</div>
-    </section>
 
     {{!-- SECTION -D --}}
   <section id="section-d" class="grid">
-    <div class="box">
-      <h4 class="content-title">Contact Us</h4>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis expedita in repellat. Amet error necessitatibus velit in vero tempora suscipit assumenda corrupti unde dicta, laboriosam, obcaecati perspiciatis molestias nisi ut!</p>
-      <p>Contact @email.com</p>
+
+    <div class="box1">
+      <h3 class="content-title">Log in, add a tack, set a date and no more hassle in organizing your workflow.
+Keep all the tasks in one place with no paper cuts. View them at any time.
+And when you are done just CheckIt!</h3>
+ 
+      <p></p>
     </div>
 
-     <div class="box">
-      <h4 class="content-title">About US</h4>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis expedita in repellat. Amet error necessitatibus velit in vero tempora suscipit assumenda corrupti unde dicta, laboriosam, obcaecati perspiciatis molestias nisi ut!</p>
-      <p>Contact @email.com</p>
+     <div class="box2">
+      <h3 class="content-title"></h3>
+
+
+<div class="form-group">
+
+   <div class="input">
+    <input type="username" class="col-md-8 mb-3" id="InputUsername1" placeholder="Password"><a href="api/" target="_blank"></a>
     </div>
+
+   <div class="input">
+    <input type="password" class="col-md-8 mb-3" id="InputPassword1" placeholder="Username"><a href="api/" target="_blank"></a>
+     </div>
+
+    <div class="input">
+    <input type="URL" class="col-md-8 mb-3"id="InputPassword1" placeholder="URL"><a href="api/" target="_blank"></a>
+    </div>
+
+    <button type="submit" class="btn btn1 col-md-8 mb-3"><a href="/" target="_blank" id="link1">Sign Up</a></button>
+
+    <button type="submit" class="btn btn2 col-md-8 mb-3"><a href="/" target="_blank" id="link2">Log In</a></button>
+
+  </div>
+
+    </div>
+
   </section>
 
 
@@ -76,32 +70,6 @@
 
 {{!-- FOOTER --}}
 
-<footer id="main-footer" class="grid"></footer>
-<div>Boot Camp Creations</div>
-<div>Protected by <a href=""></a></div>
-
-
-
-
-
-
-{{!-- 
-<div class="container">
-  <div class="row">
-    <div class="col-8 offset-2">
-      <div class="card mt-4">
-        <div class="card-body">
-          <h5 class="card-title">Example</h5> --}}
-          {{!-- <p>
-            <strong>ID</strong>: {{example.id}}</p>
-          <p>
-          <p>
-            <strong>Text</strong>: {{example.text}}</p>
-          <p>
-            <strong>Description:</strong> {{example.description}}</p>
-            <a href="/">← Back To Home</a> -->
-        {{!-- </div>
-      </div>
-    </div>
-  </div>
-</div>  --}}
+<footer id="main-footer" class="grid">
+<p> Copyright &copy; 2019: TeamAwesome's App</p>
+</footer>
