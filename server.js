@@ -2,7 +2,7 @@ require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
 // require moment.js npm package
-// var moment = require("moment");
+var moment = require("moment");
 
 var db = require("./models");
 
