@@ -1,5 +1,7 @@
 /* COMMECTED TO home.handlebars */
-
+/* body, html {
+    height: 100%;
+} */
 
 body{
     margin: 0px;
@@ -11,6 +13,10 @@ body{
     text-align: center;
 }
 
+/* div.wrap {
+    height: 100%; 
+    overflow: hidden;
+} */
 /* img{
     display: block;
     width: 100%;
@@ -42,11 +48,12 @@ p{
     fill:#ffffff;
     box-shadow: 25px 25px 50px rgb(0,0,0,0.5);
     border-radius: 7px;
-    height: 60px;
-    width: 60px;
+    height: 30px;
+    width: 30px;
     background:#1da1f2;
     border: 1px solid #0f69a1;
     float: right;
+    right: 10px;
 }
 
 #link1{
@@ -105,7 +112,7 @@ p{
 
 .box1{
     padding: 2em;
-    height: 450px;
+    height: 455px;
     color: #ffffff;
     background-color: #1da1f2;
 }

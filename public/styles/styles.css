@@ -1,21 +1,36 @@
 
-/* .list-group-item {
-  line-height: 2.5;
+
+/* styling for addForm.handlebars - add task */
+.formAdd {
+  border: 1px solid #666;
+  padding: 10px;
+  box-shadow: 5px 10px 8px #888888;
 }
+.navbar{
+  background-color: #ffffff;
+  position: sticky;
+  box-shadow: 4px 8px 8px rgb(0,0,0,0.5);  
+  justify-content: right;
+}
+/* styling for index.handlebars - task list */
+#task-list {
+  list-style-image: none;
+  line-height: 1;
+ }
 
-h2 {
-  text-align: left ;
-  font-family: 'Racing Sans One', cursive;
-  font-size: 30px;
-  color: #3C6B82;
-} */
 
-
-.delete {
+.delete, .complete {
   float: right;
 }
+
 
 .card {
   margin: 5px 0;
   
 }
+
+.task {
+  width: 5%;
+  text-align: right;
+}
+
